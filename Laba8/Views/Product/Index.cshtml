@@ -1,0 +1,57 @@
+﻿@model List<Laba8.Models.Product>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <style>
+        body {
+            background-color: #ffebf4;
+            font-size: 20px;
+            margin: 30px;
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Products List</h2>
+
+    <h3>List View:</h3>
+    <ul>
+        @foreach (var product in Model)
+        {
+            <li>@product.ID. @product.Name - @product.Price$ (@product.CreatedDate)</li>
+        }
+    </ul>
+
+    <h3>Table View:</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Created Date</th>
+        </tr>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ID</td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.CreatedDate</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
